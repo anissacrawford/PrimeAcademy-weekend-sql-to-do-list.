@@ -19,3 +19,6 @@ ORDER BY "id";
 UPDATE "tasks"
 SET "completed" = 'true' 
 WHERE "id" = $1;
+
+DELETE FROM "tasks"
+WHERE "id" = $1;

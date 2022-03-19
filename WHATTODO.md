@@ -33,4 +33,4 @@
 [ ]DELETE
 
 ## EXTRA
-[ ] update readme 
+[x] update readme 

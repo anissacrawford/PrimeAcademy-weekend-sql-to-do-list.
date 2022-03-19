@@ -27,6 +27,7 @@ function setupClickListeners(){
         $('input').val('');
     });
     $('#viewTasks').on('click', '.completeBtn', updateTask);
+    $('#viewTasks').on('click', '.deleteBtn', handleDelete);
 }
 
 //gets task data 
@@ -82,6 +83,27 @@ function updateTask(){
     });
 }
 
+//delete task
+function handleDelete(){
+    console.log('YEET');
+
+    let task = $(this).closest('tr').data('task');
+
+    let id = task.id;
+    console.log(id);
+
+    $.ajax({
+        url: `/tasks/${id}`,
+        method: 'DELETE',
+    }).then(function (response){
+        console.log('deleted!');
+        getTasks();
+    }).catch(function(err){
+        console.log(err);
+    })
+};
+
+
 //render to the DOM 
 function render(tasks){
     $('#viewTasks').empty();
@@ -100,8 +122,9 @@ function render(tasks){
         <tr>
             <td>${task.task}</td>
             <td>${task.description}</td>
-             <td>${task.completed}</td>
+            <td>${task.completed}</td>
             <td>${button}</td>
+            <td><button class="deleteBtn">DELETE</button></td>
         </tr>
         `) 
         // <td>${task.dateCompleted}</td>
