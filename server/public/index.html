@@ -10,11 +10,32 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <h1>TO DO LIST:</h1>
-    <input id="task" type="text" placeholder="task">
-    <input id="description" type="text" placeholder="description">
-    <input id="dateStarted" type="date" placeholder="date started">
-    <input id="dateCompleted" type="date" placeholder="date completed">
-    <button id="addBtn">ADD TASK</button>
+    <h1>TO DO LIST</h1>
+
+    <section id="addTask">
+        <h2>ADD TASK:</h2>
+        <input id="task" type="text" placeholder="task">
+        <input id="description" type="text" placeholder="description">
+        <input id="dateStarted" type="date" placeholder="date started">
+        <input id="dateCompleted" type="date" placeholder="date completed">
+        <button id="addBtn">ADD TASK</button>
+    </section>
+
+    <section id="allTasks">
+        <h2>ALL TASKS:</h2>
+        <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Description</th>
+                <th>Date Started</th>
+                <th>Date Completed</th>
+              </tr>
+            </thead>
+                <tbody id="viewTasks">
+                </tbody>
+        </table>
+    </section>
+
 </body>
 </html>
