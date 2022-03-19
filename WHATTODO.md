@@ -10,14 +10,14 @@
     -description
     -date started 
     -date completed 
-[ ]complete button 
+[x]complete button 
 [ ]delete button 
 [ ]task should change colors when complete 
 [ ]CSS
     -background color
     -font family and size
     -text color and background color of task 
-[ ]database.sql file for queries 
+[x]database.sql file for queries 
 
 ## BACK END AND DATABASE 
 [x]create database: weekend-to-do-app
@@ -29,7 +29,7 @@
     -date completed DATE
 [x]GET 
 [x]POST
-[ ]PUT
+[x]PUT
 [ ]DELETE
 
 ## EXTRA

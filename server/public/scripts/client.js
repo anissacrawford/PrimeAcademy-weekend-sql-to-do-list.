@@ -18,7 +18,7 @@ function setupClickListeners(){
             task: $('#task').val(),
             description: $('#description').val(),
             completed: $('#completed').val(),
-            dateCompleted: $('#dateCompleted').val(),
+            // dateCompleted: $('#dateCompleted').val(),
         };
 
         //call saveTask with new object 
@@ -91,7 +91,9 @@ function render(tasks){
         let button = " ";
 
         if (task.completed === false){
-            button = (`<button class="completedBtn">Completed</button>`);
+            button = (`<button class="completeBtn">Complete</button>`);
+        }else if (task.completed === true){
+            //change color to pink 
         }
 
         let row = $(`
@@ -100,9 +102,9 @@ function render(tasks){
             <td>${task.description}</td>
              <td>${task.completed}</td>
             <td>${button}</td>
-            <td>${task.dateCompleted}</td>
         </tr>
-        `)
+        `) 
+        // <td>${task.dateCompleted}</td>
         
         row.data('task', task);
         $('#viewTasks').append(row);
