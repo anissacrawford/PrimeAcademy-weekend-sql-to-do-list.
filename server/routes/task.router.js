@@ -4,7 +4,7 @@ const taskRouter = express.Router();
 //added static files from server 
 const pool = require('../modules/pool');
 
-//GET
+//GET ROUTE
 taskRouter.get('/', (req, res) => {
     let queryText = 'SELECT * FROM "tasks" ORDER BY "id";';
     pool.query(queryText).then(result => {
@@ -15,7 +15,7 @@ taskRouter.get('/', (req, res) => {
     })
 })
 
-//POST
+//POST ROUTE
 taskRouter.post('/', (req, res) => {
     let newTask = req.body;
 
@@ -36,7 +36,7 @@ taskRouter.post('/', (req, res) => {
         });
 });
 
-//PUT
+//PUT ROUTE
 taskRouter.put('/:id', (req,res) => {
     let id = req.params.id;
     let content = req.body.completedStatus;
@@ -63,7 +63,7 @@ taskRouter.put('/:id', (req,res) => {
 
 })
 
-//DELETE
+//DELETE ROUTE
 taskRouter.delete('/:id', (req, res) =>{
     console.log('got to delete!', req.params.id);
     let id = req.params.id;

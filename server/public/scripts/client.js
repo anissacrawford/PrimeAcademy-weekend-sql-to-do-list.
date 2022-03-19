@@ -1,7 +1,4 @@
-console.log('hi');
-
 $(document).ready(function(){
-    console.log('JQ');
     //establish click listeners 
     setupClickListeners();
     //load existing tasks on page load 
@@ -10,6 +7,7 @@ $(document).ready(function(){
 
 //click listeners 
 function setupClickListeners(){
+    //static listener 
     $('#addBtn').on('click', function(){
         console.log('in addButton on click');
 
@@ -26,6 +24,7 @@ function setupClickListeners(){
         //clear input value 
         $('input').val('');
     });
+    //dynamic listeners 
     $('#viewTasks').on('click', '.completeBtn', updateTask);
     $('#viewTasks').on('click', '.deleteBtn', handleDelete);
 }
@@ -109,10 +108,9 @@ function render(tasks){
     $('#viewTasks').empty();
     
     for (let task of tasks){
-
         let button = " ";
         
-
+        //handle complete column
         if (task.completed === false){
             button = (`<button class="completeBtn">Complete</button>`);
         }
@@ -121,6 +119,7 @@ function render(tasks){
            button = 'yes';
         }
 
+        //create row
         let row = $(`
         <tr id="tableRow">
             <td>${task.task}</td>
@@ -130,6 +129,7 @@ function render(tasks){
         </tr>
         `)
         
+        //add row to table 
         row.data('task', task);
         $('#viewTasks').append(row);
     }

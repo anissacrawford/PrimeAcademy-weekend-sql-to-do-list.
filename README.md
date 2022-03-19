@@ -7,7 +7,7 @@ Duration: 3 days
 
 Users will be able to create a to do list. 
 
-By filling out the given fields and pressing the "add task" button, users will be able to create new tasks to add to their list. Once a task is complete, click the "complete" button to check off your task. A completed task will be shown in green. To delete a task, click the "delete" button. 
+By filling out the given fields and pressing the "add task" button, users will be able to create new tasks to add to their list. Once a task is complete, click the "complete" button to check off your task. A completed task will be shown by a "yes". To delete a task, click the "delete" button. 
 
 ## Installation
 1. Create a database named weekend_to_do_app
@@ -19,7 +19,7 @@ By filling out the given fields and pressing the "add task" button, users will b
 
 ## Usage 
 1. Enter task data into input fields. Click "add task" to add task to the to do list
-2. Click "complete" to show task as completed (color will change to gray)
+2. Click "complete" to show task as completed (button will change to a "yes")
 3. Click "delete" to delete a task 
 
 ## Built With
