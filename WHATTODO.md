@@ -21,9 +21,16 @@
 
 ## BACK END AND DATABASE 
 [x]create database: weekend-to-do-app
-[ ]create data table 
+[x]create data table 
     -id SERIAL PRIMARY KEY 
     -task VARCHAR (500) NOT NULL 
     -description (500)
     -date started DATE
     -date completed DATE
+[x]GET 
+[ ]POST
+[ ]PUT
+[ ]DELETE
+
+## EXTRA
+[ ] update readme 

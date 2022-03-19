@@ -39,9 +39,20 @@ function getTasks(){
     });
 } 
 
-//saves task data 
-function saveTasks(){
+//add new task data 
+function saveTasks(newTask){
+    console.log('in saveTasks', newTask);
 
+    $.ajax({
+        type: 'POST',
+        url: '/tasks',
+        data: newTask,
+    }).then(function(response){
+        console.log('Response from server', response);
+        getTasks();
+    }).catch(function(err){
+        console.log('ERROR in POST');
+    });
 }
 
 //render to the DOM 
