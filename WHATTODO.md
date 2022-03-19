@@ -12,11 +12,10 @@
     -date completed 
 [x]complete button 
 [x]delete button 
-[ ]task should change colors when complete 
+[x]task should change when complete 
 [x]CSS
     -background color
     -font family and size
-    -text color and background color of task 
 [x]database.sql file for queries 
 
 ## BACK END AND DATABASE 

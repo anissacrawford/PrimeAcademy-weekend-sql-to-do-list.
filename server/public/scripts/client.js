@@ -111,23 +111,24 @@ function render(tasks){
     for (let task of tasks){
 
         let button = " ";
+        
 
         if (task.completed === false){
             button = (`<button class="completeBtn">Complete</button>`);
-        }else if (task.completed === true){
-            //change color to pink 
+        }
+        
+        if (task.completed === true){
+           button = 'yes';
         }
 
         let row = $(`
-        <tr>
+        <tr id="tableRow">
             <td>${task.task}</td>
             <td>${task.description}</td>
-           
             <td>${button}</td>
             <td><button class="deleteBtn">DELETE</button></td>
         </tr>
-        `) 
-        // <td>${task.dateCompleted}</td>
+        `)
         
         row.data('task', task);
         $('#viewTasks').append(row);
