@@ -5,7 +5,7 @@
     -pg
     -body parser 
     -make sure npm start is working 
-[ ]inputs
+[x]inputs
     -task
     -description
     -date started 
