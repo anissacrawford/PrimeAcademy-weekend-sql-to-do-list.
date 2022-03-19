@@ -122,7 +122,7 @@ function render(tasks){
         <tr>
             <td>${task.task}</td>
             <td>${task.description}</td>
-            <td>${task.completed}</td>
+           
             <td>${button}</td>
             <td><button class="deleteBtn">DELETE</button></td>
         </tr>

@@ -1,3 +1,24 @@
-.color {
-    background-color: green;
+* {
+    font-family: sans-serif;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(218,70,252,1) 100%);
+    text-align: center;
 }
+
+.color {
+    background-color: lightgray;
+}
+
+::placeholder {
+    color: lightgray;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+tr{
+    height: 40px;
+}
+

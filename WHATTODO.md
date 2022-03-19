@@ -11,9 +11,9 @@
     -date started 
     -date completed 
 [x]complete button 
-[ ]delete button 
+[x]delete button 
 [ ]task should change colors when complete 
-[ ]CSS
+[x]CSS
     -background color
     -font family and size
     -text color and background color of task 
@@ -30,7 +30,7 @@
 [x]GET 
 [x]POST
 [x]PUT
-[ ]DELETE
+[x]DELETE
 
 ## EXTRA
 [x] update readme 

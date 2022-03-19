@@ -19,7 +19,7 @@ By filling out the given fields and pressing the "add task" button, users will b
 
 ## Usage 
 1. Enter task data into input fields. Click "add task" to add task to the to do list
-2. Click "complete" to show task as completed (color will change to green)
+2. Click "complete" to show task as completed (color will change to gray)
 3. Click "delete" to delete a task 
 
 ## Built With
