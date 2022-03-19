@@ -36,9 +36,38 @@ taskRouter.post('/', (req, res) => {
         });
 });
 
-
 //PUT
+taskRouter.put('/:id', (req,res) => {
+    let id = req.params.id;
+    let content = req.body.completedStatus;
 
+    console.log(id, content);
+
+    let queryText = '';
+
+    if (content === 'true') {
+        queryText =
+            `UPDATE "tasks"
+            SET "completed" = 'FALSE'
+            WHERE "id" = $1;
+            `
+    } else if (content === 'false') {
+        queryText =
+            `UPDATE "tasks"
+            SET "completed" = 'TRUE'
+            WHERE "id" = $1;
+            `
+    }
+
+    pool.query(queryText, [id])
+    .then(result => {
+        res.sendStatus(200);
+    }).catch(err =>{
+        console.log('POOL BROKE', err);
+        res.sendStatus(500);
+    })
+
+})
 
 
 

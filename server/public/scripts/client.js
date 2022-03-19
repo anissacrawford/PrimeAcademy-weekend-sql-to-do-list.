@@ -17,13 +17,16 @@ function setupClickListeners(){
         let taskToSend = {
             task: $('#task').val(),
             description: $('#description').val(),
-            dateStarted: $('#dateStarted').val(),
+            completed: $('#completed').val(),
             dateCompleted: $('#dateCompleted').val(),
         };
 
         //call saveTask with new object 
         saveTasks(taskToSend);
-    })
+        //clear input value 
+        $('input').val('');
+    });
+    $('#viewTasks').on('click', '.completeBtn', updateTask);
 }
 
 //gets task data 
@@ -35,7 +38,7 @@ function getTasks(){
         console.log(response);
         render(response);
     }).catch(function(err){
-        console.log('error in GET', err);
+        console.log('ERROR in GET', err);
     });
 } 
 
@@ -55,17 +58,48 @@ function saveTasks(newTask){
     });
 }
 
+//update task 
+function updateTask(){
+    console.log('GET IT RIGHT THE FIRST TIME ');
+
+    //variable to pull out data from task object 
+    let task = $(this).closest("tr").data("task");
+    let id = task.id;
+
+    console.log(task, id);
+
+    $.ajax({
+        url: `/tasks/${id}`,
+        method: 'PUT', 
+        data: {
+            completedStatus: task.completed
+        }
+    }).then(function(response){
+        console.log('UPDATED TASK');
+        getTasks();
+    }).catch(function (err){
+        console.log('ERROR in PUT', err);
+    });
+}
+
 //render to the DOM 
 function render(tasks){
     $('#viewTasks').empty();
     
     for (let task of tasks){
 
+        let button = " ";
+
+        if (task.completed === false){
+            button = (`<button class="completedBtn">Completed</button>`);
+        }
+
         let row = $(`
         <tr>
             <td>${task.task}</td>
             <td>${task.description}</td>
-            <td>${task.dateStarted}</td>
+             <td>${task.completed}</td>
+            <td>${button}</td>
             <td>${task.dateCompleted}</td>
         </tr>
         `)
