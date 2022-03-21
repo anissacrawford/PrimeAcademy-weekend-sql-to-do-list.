@@ -1,6 +1,6 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Weekend To Do List 
 
 ## Description
 Duration: 3 days 
@@ -31,4 +31,4 @@ PG
 Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. 
 
 ## Support
-If you have suggestions or issues, please email me at anissacrawford@gmail.com
+If you have suggestions or issues, please email me at https://github.com/anissacrawford
