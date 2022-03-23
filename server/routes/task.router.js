@@ -21,9 +21,9 @@ taskRouter.post('/', (req, res) => {
 
     let queryText = `
     INSERT INTO "tasks" ("task", "description", "completed") 
-    VALUES ($1, $2, $3);
+    VALUES ($1, $2, FALSE);
     `
-    let values = [newTask.task, newTask.description, newTask.completed]
+    let values = [newTask.task, newTask.description]
 
     console.log('Adding new task', values);
     pool.query(queryText, values)
@@ -38,28 +38,25 @@ taskRouter.post('/', (req, res) => {
 
 //PUT ROUTE
 taskRouter.put('/:id', (req,res) => {
-    let id = req.params.id;
-    let content = req.body.completedStatus;
 
-    console.log(id, content);
+    
 
-    let queryText = '';
+    let queryText = `UPDATE "tasks"
+    SET "completed" = 'TRUE'
+    WHERE "id" = $1;
+    `;
 
-    if (content === 'false') {
-        queryText =
-            `UPDATE "tasks"
-            SET "completed" = 'TRUE'
-            WHERE "id" = $1;
-            `
-    }
+    const queryParams = [
+    req.params.id
+    ]
 
-    pool.query(queryText, [id])
+    pool.query(queryText, queryParams)
     .then(result => {
         res.sendStatus(200);
     }).catch(err =>{
         console.log('POOL BROKE', err);
         res.sendStatus(500);
-    })
+    }) 
 
 })
 

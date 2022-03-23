@@ -70,10 +70,7 @@ function updateTask(){
 
     $.ajax({
         url: `/tasks/${id}`,
-        method: 'PUT', 
-        data: {
-            completedStatus: task.completed
-        }
+        method: 'PUT'
     }).then(function(response){
         console.log('UPDATED TASK');
         getTasks();
