@@ -118,7 +118,7 @@ function render(tasks){
 
         //create row
         let row = $(`
-        <tr id="tableRow">
+        <tr id="tableRow" class="content-table">
             <td>${task.task}</td>
             <td>${task.description}</td>
             <td>${button}</td>
